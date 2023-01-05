@@ -95,3 +95,16 @@ function sum() {
 const result = sum.apply({name: 'Lotus' ,age: '25' } ,[5,10,35,20,50]);
 console.log("result of sum" , result);
 
+
+const pen = {
+    nae:'Roopa' , 
+    address: {
+        city:"hubli",
+        state:"KA"
+    },
+    getData: function() {
+        return "all Data here"
+    }
+}
+let user = JSON.parse(JSON.stringify(pen));
+console.log("object" , pen ,"user" , user);
