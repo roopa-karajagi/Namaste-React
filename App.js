@@ -39,36 +39,43 @@ const heading2 = React.createElement(
   "Hurray , New Year. Let's begin this year new learnings"
 );
 
+const heading3 = React.createElement("h3" , {id:"n1"} , "Next Level")
 // React.createContext = Object => HTML(DOM)
 const container = React.createElement(
   "div",
   { id: "container", hellow: "Roopa" },
-  [heading1, heading2]
+  [heading1, heading2,heading3]
 );
 
-//which is not working , need to check 
-const heading = React.createElement(
-  "h1",
-  {
-    id: "title",
-    className: "heading",
-    style: { color: "red" },
-  },
-  "Namaste React!!!"
-);
-console.log(heading);
-const heading3 = document.getElementById('title');
- console.log(heading3);
-heading3.innerHTML= "Namaste JS!!!";
-console.log(heading3);
+ // first needs to render the code and let it available and then with settimeout we can change the content of the tags.
+//  else it doens't work
+
+// const heading = React.createElement(
+//   "h1",
+//   {
+//     id: "title",
+//     className: "heading",
+//     style: { color: "red" },
+//   },
+//   "Namaste React!!!"
+// );
+
+// setTimeout(
+//   function(){
+//     var heading3 = document.getElementById('title');
+//     console.log(heading3)
+//     heading3.innerHTML = 'Namaste JS'
+//   }
+//   , 1)
+
 
 //JSX -- jsx is html like syntax, its not HTML
 // JSX --> React.createElement -->Object --> HTML(DOM) --> it is converted by babel
 
-//we are creating react using React.createRoot
-const root = ReactDOM.createRoot(document.getElementById("root"));
-// passing an react element inside the root
-root.render(container);
+ //we are creating react using React.createRoot
+ const root = ReactDOM.createRoot(document.getElementById("root"));
+ // passing an react element inside the root
+ root.render(container); 
 
 // BUNDLER
 // webpack
