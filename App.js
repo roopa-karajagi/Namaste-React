@@ -27,55 +27,108 @@ PARCEL ---
 *To run production build app , we need to add dependencies to run the application and this dependencies also dependent on other packages too so it is called trasitive dependencies - dendency Tree
 */
 
-//added key inside it 
-const heading1 = React.createElement(
-  "h1",
-  { style: { color: "blue" }, key: "hp1", id: "title1" },
-  "Namaste React Live Course"
-);
-const heading2 = React.createElement(
-  "h2",
-  { style: { color: "green" }, key: "hp2", id: "title2" },
-  "Hurray , New Year. Let's begin this year new learnings"
-);
+// React.createElement ==> Object ==> render HTML(DOM)
+// Key and Id is different : React keeps track of key to comapre the elements
 
-const heading3 = React.createElement("h3" , {id:"n1"} , "Next Level")
-// React.createContext = Object => HTML(DOM)
+//Adding multiple elements inside it , it will become messy
 const container = React.createElement(
   "div",
   { id: "container", hellow: "Roopa" },
-  [heading1, heading2,heading3]
+  [
+    React.createElement(
+      "h1",
+      { style: { color: "blue" }, key: "1", id: "title1" },
+      "Namaste React Live!!!"
+    ),
+    React.createElement(
+      "h2",
+      { style: { color: "green" }, key: "2", id: "title2" },
+      "Hurray , Let's begin with New Beginnings"
+    ),
+    React.createElement("h3", { id: "title3", key: "3" }, "Next Level"),
+  ]
+);
+//Adding ul Tag
+
+const unOrderList = React.createElement(
+  "ul",
+  { id: "unorder", hellow: "Roopa" },
+  [
+    React.createElement("li", { key: "l1" }, "Home"),
+    React.createElement("li", { key: "l2" }, "About"),
+    React.createElement("li", { key: "l3" }, "Contact"),
+  ]
 );
 
- // first needs to render the code and let it available and then with settimeout we can change the content of the tags.
-//  else it doens't work
-
-// const heading = React.createElement(
-//   "h1",
-//   {
-//     id: "title",
-//     className: "heading",
-//     style: { color: "red" },
-//   },
-//   "Namaste React!!!"
-// );
-
-// setTimeout(
-//   function(){
-//     var heading3 = document.getElementById('title');
-//     console.log(heading3)
-//     heading3.innerHTML = 'Namaste JS'
-//   }
-//   , 1)
-
-
-//JSX -- jsx is html like syntax, its not HTML
+// JSX: 
+// JSX ELement  -- It is not HTML inside Javascript, its HTML -like syntax
 // JSX --> React.createElement -->Object --> HTML(DOM) --> it is converted by babel
+//  React Element in JSX -- JSX expression -- its JSX syntax
+const heading = <h1 key="1">Namaste React</h1>;
+const heading2 = (
+  <h2 key="h_2" id="title">
+    Hurray!! Live Class
+  </h2>
+);
+// console.log("heading2" , heading2)
+//we are creating react root using React.createRoot
+/********************************************* */
 
- //we are creating react using React.createRoot
- const root = ReactDOM.createRoot(document.getElementById("root"));
- // passing an react element inside the root
- root.render(container); 
+//const root = ReactDOM.createRoot(document.getElementById("root"));
+
+// passing an react element inside the root
+// async defer
+/********************************************* */
+
+// root.render([heading , heading2]);
+
+/********************************************* */
+// FUnctional Component -- Normal javascript Function itself
+const Title =()=>(
+  <h1 id="title_1">
+    Life Lines
+  </h1>
+)
+
+// we can write  functional component in different types
+const HeaderComponent = () =>{
+  return (
+    <div>
+      <Title />
+      {/* {Title()} */}
+      <h1>Rise Up</h1>
+      <h2>Life is Made for Living</h2>
+    </div>
+  )
+}
+const HeaderComponent1 =() =>(
+  <div>
+    <h1>Rise Up</h1>
+    <h2>Focus</h2>
+  </div>
+)
+function HeaderComponent2() {
+  return (
+    <div>
+      <h3>Go and Learn New Things</h3>
+    </div>
+  )
+}
+const HeaderComponent3 = function() {
+  return (
+    <div> 
+      <h4>Dedicate soul and time</h4>
+    </div>
+  )
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<>
+  <HeaderComponent />
+  <HeaderComponent1/>
+  <HeaderComponent2 />
+  <HeaderComponent3 />
+ </> )
 
 // BUNDLER
 // webpack
