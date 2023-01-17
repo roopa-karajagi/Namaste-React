@@ -1,0 +1,16 @@
+.search-container {
+    display: flex;
+  }
+  
+  .search-input {
+    text-align: left;
+    font-size: 18px;
+    padding: 8px 12px;
+  }
+  
+  .search-btn {
+    color: black;
+    border-radius: 0;
+    background-color: orange;
+    border-color: orange;
+  }

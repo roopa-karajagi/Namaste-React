@@ -1,0 +1,71 @@
+.card {
+    position: relative;
+    background: #fff;
+    height: 320px;
+    border-radius: 5px;
+    box-shadow: 3px 3px 5px #0000004f;;
+   width:calc(350px - 20px);
+}
+.card-link {
+    position: relative;
+    text-decoration: none;
+}
+.card-in {
+    padding: 6px;
+    width:calc(350px - 55px);
+}
+.card-in h2 , .card-in h3 {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.card-in h2:hover , .card-in h3:hover {
+   overflow: visible;
+   word-wrap: break-word;
+}
+.card-in h2 {
+    font-size: 20px;
+    color: black;
+    font-weight: bold;
+    word-break: break-word;
+}
+
+.card-in h3 {
+    color: #686b78;
+    font-weight: 500;
+    font-size: 16px;
+    margin: 4px 0;
+}
+.avg-rate {
+    color: black;
+    background-color: orange;
+    border-color: orange;
+    font-size: 12px;
+    border-radius: 8px;
+    margin: 8px 2px;
+    padding: 4px 12px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.card-link > img {
+    transition: opacity .3s ease-out;
+    background: #eef0f5;
+    width: 100%;
+    position: relative;
+}
+
+
+@media screen and  (min-width: 650px) {
+    .card {
+        width:calc(20% - 2%);
+    }
+}
+
+
+@media screen and  (min-width: 950px) {
+    .card {
+        width:calc(40% - 20%);
+    }
+}

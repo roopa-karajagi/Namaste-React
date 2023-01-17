@@ -1,0 +1,38 @@
+.header_comp {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin:10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(30, 87, 185, 0.388) 0px 1px 3px -1px;
+}
+.title_comp {
+    display: flex;
+    align-items: center;
+    flex: 2;
+}
+
+.title_comp >  a img {
+    width: 100px;
+    border-radius: 10px;
+}
+.title {
+    text-align: center;
+    color: red;
+    flex: 1;
+    font-size: 36px;
+}
+.nav-items {
+    flex: 1;
+    min-width: 450px;
+}
+.nav-items > ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-evenly;
+}
+.nav-items > ul > li {
+    padding: 10px;
+    font-size: 20px;
+    font-weight: 700;
+}
