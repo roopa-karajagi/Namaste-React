@@ -6,6 +6,7 @@ export const RestaurantCard = ({
   cuisines,
   cloudinaryImageId,
   avgRating,
+  costForTwoString
 }) => {
   // console.log(name, cuisines, cloudinaryImageId, avgRating); //---> data comes as expected
   return (
@@ -21,7 +22,10 @@ export const RestaurantCard = ({
         <h3>{cuisines.join(", ")}</h3>
         <button type="button" className="avg-rate">{avgRating}</button>
         </div>
-        
+        <div className="card-order">
+          <div className="cost">{costForTwoString}</div>
+          <button className="btn-cost">Order Now </button>
+        </div>
       </a>
     </div>
   );

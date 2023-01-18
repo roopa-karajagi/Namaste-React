@@ -9,7 +9,7 @@
 .title_comp {
     display: flex;
     align-items: center;
-    flex: 2;
+    flex: 1;
 }
 
 .title_comp >  a img {
@@ -35,4 +35,23 @@
     padding: 10px;
     font-size: 20px;
     font-weight: 700;
+}
+
+.auth-buttons {
+    display: flex;
+    justify-content: space-evenly;
+    min-width: 100px;
+}
+
+.auth-buttons > .login-btn , .auth-buttons > .logout-btn {
+    padding: 8px 16px;
+    cursor: pointer;
+    color: white;
+    background-color: #0e6312;
+    border: none;
+    border-radius: 0px;
+    font-weight: 700;
+}
+.auth-buttons > .logout-btn {
+    background-color: #656dab;
 }
