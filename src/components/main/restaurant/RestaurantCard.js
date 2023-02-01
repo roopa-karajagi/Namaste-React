@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { IMG_CDN_URL } from "../../../constantData";
 import './restaurant.css'
 
@@ -6,12 +7,13 @@ export const RestaurantCard = ({
   cuisines,
   cloudinaryImageId,
   avgRating,
-  costForTwoString
+  costForTwoString,
+  id
 }) => {
   // console.log(name, cuisines, cloudinaryImageId, avgRating); //---> data comes as expected
   return (
     <div className="card">
-      <a href="/" className="card-link">
+      <Link to={`/restaurant/${id}`} className="card-link">
         <img
           src={`${IMG_CDN_URL}${cloudinaryImageId}`}
           height={180}
@@ -26,7 +28,7 @@ export const RestaurantCard = ({
           <div className="cost">{costForTwoString}</div>
           <button className="btn-cost">Order Now </button>
         </div>
-      </a>
+      </Link>
     </div>
   );
 };

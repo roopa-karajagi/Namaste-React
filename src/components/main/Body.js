@@ -3,6 +3,7 @@ import { restaurantList } from "../../constantData";
 import { useEffect, useState } from "react";
 import "./body.css";
 import Shimmer from "../shimmer/Shimmer";
+import Section from "../section/Banner";
 
 // functions needs to be outside for cleaner code
 const filterData = (searchTxt, restaurantData) => {
@@ -33,7 +34,7 @@ const Body = () => {
 
   async function getRestaurants() {
     const res = await fetch(
-      " https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9654796&lng=77.7184638&page_type=DESKTOP_WEB_LISTING"
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9654796&lng=77.7184638&page_type=DESKTOP_WEB_LISTING"
     );
     const data = await res.json();
     //optional chaining
@@ -48,12 +49,13 @@ const Body = () => {
 
   //not render  component  --> early return
   if(!allRestaurantData) return null;
-
   return (
     <>
       {allRestaurantData.length === 0 ? (
         <Shimmer />
       ) : (
+        <>
+        <Section />
         <div className="rest_body">
           <div className="rest_header">
             <h1>
@@ -105,6 +107,7 @@ const Body = () => {
             )}
           </div>
         </div>
+        </>
       )}
     </>
   );
