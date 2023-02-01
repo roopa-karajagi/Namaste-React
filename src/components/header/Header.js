@@ -1,5 +1,7 @@
 import { useState } from "react";
 import LogoImage from "../../../assets/logo.jpg";
+import { Link } from 'react-router-dom';
+import Section from "../section/Banner";
 import "./header.css";
 
 //Title of the APp
@@ -16,6 +18,7 @@ export const Title = () => (
 const HeaderComponent = () => {
   const [isLoggedIn , setIsLoggedIn] = useState(false);
   return (
+    <>
     <div className="header_comp">
       <Title />
       <div className="title" id="title">
@@ -23,11 +26,23 @@ const HeaderComponent = () => {
       </div>
       <nav className="nav-items">
         <ul>
+          <Link to="/">
           <li>Home</li>
+          </Link>
+          
+          <Link to="/about">
           <li>About US</li>
+          </Link>
+          <Link to="/contact">
           <li>Contact </li>
+          </Link>
+          <Link to="/menu">
           <li>Menu</li>
+          </Link>
+          <Link to="/cart">
           <li>Cart</li>
+          </Link>
+          
         </ul>
       </nav>
       {/* {
@@ -47,6 +62,7 @@ const HeaderComponent = () => {
       </div>
       
     </div>
+    </>
   );
 };
 
