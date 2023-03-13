@@ -4,13 +4,8 @@ import { useEffect, useState } from "react";
 import "./body.css";
 import Shimmer from "../shimmer/Shimmer";
 import Section from "../section/Banner";
+import { filterData } from "../../utils/Helper";
 
-// functions needs to be outside for cleaner code
-const filterData = (searchTxt, restaurantData) => {
-  return restaurantData.filter((res) =>
-    res.data?.name.toLocaleLowerCase().includes(searchTxt.toLocaleLowerCase())
-  );
-};
 
 //what is state and why
 //what is Hooks

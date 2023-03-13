@@ -1,0 +1,4 @@
+WHy Hooks:
+
+For the code modularity --> Breaking code into smaller chunks
+readability and reusability and code maintainability
