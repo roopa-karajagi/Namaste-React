@@ -1,2 +1,2 @@
 # Namaste-React
-Learning as Developer
+React Developer ...learning by Akshay Saini Namaste React Course...

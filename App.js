@@ -77,6 +77,16 @@ const container = React.createElement(
  // passing an react element inside the root
  root.render(container); 
 
+//  ReactDOM --> connects with DOM --> where react is responsible for my UI changes but displaying it on screen reactDOM does its work--> manipulating the DOM and display code changes on UI screen
+
+// ReactDoM uses createroot --> from where i need run the application and render has component which one torender on screen
+
+
+//In newer version we have to createRoot using ReactDOM.createRoot(document.getElementById('root')) and render the application using
+// root.render(App)
+// THis was used till React17 version ReactDOM.render( <App /> ,document.getElementById('root')); --> this can also be written
+
+
 // BUNDLER
 // webpack
 // vite , parcel

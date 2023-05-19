@@ -1,0 +1,73 @@
+We use Bundler in our application there are many bundlers
+-- webpack , parcel , vite...etc
+In original create-react-app --> it uses webpack as bundler
+bundlers minify our code , remove unwanted code
+package --> module (some part of js code)
+we use npm packager , yarn packager
+npm --> node package manager 
+npm init --> initialization of npm (packager which will provide package to run the applications it gives us package.json ex: react, jest, bootstrap etc) 
+
+npm install package-name --> to install other pakages to npm which gets include in packages.json file
+
+react app is powered by lot of things , lot of packages, many super powers (ex: to optimize, minify,testing , bundler..etc) for that we need helper packages and it is present in npm --> that is the reason we need npm
+
+Parcel is beast 
+To install any packages to use in our application , we install it using npm i --save-dev (dev dependencies) or we can also use npm install -D parcel
+
+* package will be having versions and next versions will be added
+* package-lock.json --> it will be haivng exact version what we use -->
+never keep lock json in gitignore
+--> integrity--> it mantain the hash --> it keeps integrity for every file , that is the reason it keeps track of version which version we are using it in our application
+
+* node-modules -->
+when we install parcel --> minified of parcel code is stored in node-modules which will help to run our application
+parcel is beast --> it also has helper function which makes parcel to run its super powers --> these all are installed in node modules 
+this is huge after installing the packages --> so developers don't add it in our application , bcz whenver we clone application we can use (npm i) to install all the packages 
+that is the reason we add only package and package lock json files to re-create (generate) in node modules
+
+To ignite our app --> npx parcel "entry point"
+npx means --> execute parcel using npm --> and given entry point
+
+
+When we import react and reactDom into our application it doesn't work--> bcz Normal js file doesn't know what is import file --> so we need to specify that file is not normal js file it is module
+so when we add script tag to run js file we need to add type as module
+<script type="module"  src="App.js"> <script>
+
+npx parcel  index.html --> creates dev build for us and host it on a server
+npx parcel build index.html --> it will create production build app --minify the code , optimize and ready for production serve app
+
+parcel has --> parcel-cache
+dist folder
+
+when i run npx parcel build --> it will create minified version of our code(bundle everything into 3 files html , css , js files) into dist folder
+
+Hot module reloading
+File watcher Alogorithm --> written in C++
+bundles the code , minify the code etc...
+media and images takes time to load
+nodemodules will be minified in production build and kept in dist folder and website on browser will be running from where it is hosted
+dev and production BUILD
+super fast build Alogorithm
+Image OPTIMIZATION
+caching while DEVELOPMENT
+compression
+compatible with older versions of browser
+polyfills
+https on dev --> we can use npx parcel build index.html --https
+it take care of port numbers
+Consistent hashing ALGORITHMS
+Zero COnfig 
+Transitive dependencies -->  package handles all the dependecies which depends on another
+our react/parcel depends on other packages and those packags depends on other packages --> these dependencies are dependent on one another and make our  application run in perfomant way..so this is called Transitive dependecies.
+
+React doesn't do any minification or code optimization , it gives funtionality to write cod use their benefits to write optimal code and use virtual DOM to compare the changes and reflect the changes on UI.
+--> It is all about bundlers, transpilers(which converts jsx into react element , Es6 into normal ES5 js)
+
+WHy react is fast --> react is fast bcz of virtual Dom but it also fast bcz it uses so many super powers (parcel, webpack) it uses bundlers , minifying the code , optimization , compilers and other packages which makes react fast including VirtualDOM
+
+
+Browserlist --> it makes sure of compatible with browser versions(old and new) depends on our configuration
+ "last 2 chrome versions" --> only works in 2 versions chrome browser
+
+
+
