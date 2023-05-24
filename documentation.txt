@@ -1,0 +1,64 @@
+polyfill --> A polyfill is a piece of code (usually JavaScript on the Web) used to provide modern functionality on older browsers that do not natively support it.
+A transpiler is a special piece of software that translates source code to another source code. It can parse (“read and understand”) modern code and rewrite it using older syntax constructs, so that it’ll also work in outdated engines.
+
+Babel is a toolchain that is mainly used to convert ECMAScript 2015+ code into a backwards compatible version of JavaScript in current and older browsers or environments
+
+Tree Shaking --> Removing unwanted Code --> We install package and it install all the helper functions --> but we use 1 or 2 functions in our code , so it removes all unwanted functions from our code , it is called Tree Shaking
+
+To make performant, scalable  application only react is not enough , we need bundler,transpilers they have their own features to make application performant and scalable
+
+npx: is exactly same as npm --> executing package without downloading it -->ex:  execution of parcel package
+npm start/ npm run start --> is used when package is installed / downloaded 
+
+babel-plugin-transform-remove-console --> removes consoles
+
+JSX --> Html like syntax --> not Html --> and it is also not javascript XML --> Facebook developers built JSX
+
+JSX --> new way of writing code in react --> where babel converts these into React.createElement react
+
+React.createElement ==> Object ==> HTML(DOM)(React DOM converts Object into HTMLDOM)
+
+react uses key to identify each names --> so that it can render only that part when we render each item --> else react will render all the items without knowing where to place the new item
+
+babel is like blackbox --> it takes some piece of code and gives us another peice of code--> it takes react element/ js code and converts into usable code.
+
+Abstract Syntax tree
+
+React Features:
+
+It has JSX , virtual DOM , babel , bundlers (webpack, parcel) , Event listeners , it always makes developers experience better
+
+React is React.createElement
+
+there are 2 package-lock.json --> one in node-modules and one we have created while installing node and packages
+
+React Components 
+--> Functional Based Component
+--> Class Based Component
+
+Functional Component is a Javascript Function that returns React Elements (it is also composition of react elements / some JSX / component itself).
+
+Components should be in capital Letter (not mandatory but its convention)
+
+React Element ==>
+const heading = (
+    <h1 id='title' key="h1">
+    Namaste React</h1>
+)
+
+React Component 
+const HeadingComponent =() =>{
+    return (
+        {heading}
+        <Heading />
+        <h1>Namaste React </h1>
+    )
+}
+
+root.render(<HeadingComponent />);
+render element ==> root.render(heading);
+and react element used in React Component using curly braces
+
+cross site scripting -- jSX santities whatever we use in curly braces and reduces any attack from outside/external source
+
+

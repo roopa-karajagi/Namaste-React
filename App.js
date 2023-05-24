@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 
 /*
 PARCEL ---
-* HMR - Hot module reloading
+* HMR - Hot module replacement
 * File watcher algorith - written in C++
 * BUNDLING
 * MINIFY
@@ -62,9 +62,11 @@ const unOrderList = React.createElement(
 
 // JSX: 
 // JSX ELement  -- It is not HTML inside Javascript, its HTML -like syntax
-// JSX --> React.createElement -->Object --> HTML(DOM) --> it is converted by babel
+// JSX --> React.createElement -->Object --> HTML(DOM) --> conversion from jsx to react.CreatElement is done by babel
 //  React Element in JSX -- JSX expression -- its JSX syntax
 const heading = <h1 key="1">Namaste React</h1>;
+
+//React Element with multiple lines should have brackets
 const heading2 = (
   <h2 key="h_2" id="title">
     Hurray!! Live Class
@@ -91,11 +93,16 @@ const Title =()=>(
 )
 
 // we can write  functional component in different types
+// THis is nothing but Component Composition --> Using Component inside Component is called Component Composition
+// passing components as props to Component and making it as new Component
+
 const HeaderComponent = () =>{
   return (
     <div>
       <Title />
-      {/* {Title()} */}
+      {/* {Title()} 
+      any js code can be written in curly braces
+      when it is react element , it should be written inside javascript brackets*/} //
       <h1>Rise Up</h1>
       <h2>Life is Made for Living</h2>
     </div>
@@ -123,12 +130,14 @@ const HeaderComponent3 = function() {
 }
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<>
+root.render(
+<>
   <HeaderComponent />
   <HeaderComponent1/>
   <HeaderComponent2 />
   <HeaderComponent3 />
- </> )
+ </> 
+ )
 
 // BUNDLER
 // webpack
