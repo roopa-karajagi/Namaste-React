@@ -1,0 +1,137 @@
+
+React.Fragment is component , it is exported by React
+JSX can have only one parent  it might be div or we can use React.Fragment
+React fragment is like an Empty Tag --> we can not pass any attriputes , any props 
+
+String Interpolation
+
+System Design Interview :
+I am building App with config driven UI --> it is plus point 
+we always drive our API based on our cofig which is done by backend --> ex: swiggy might have some discounts on some other location , then it will be different for them , in some other locations it might not have discounts --> based on our requirments our API is designed..
+
+Optional chahining
+
+props -- properties
+
+arguments and parameters
+ function fn (params1 , pass2){
+
+ }
+ fn(args1 , args2);
+
+
+ / First Method
+
+Using destructuring props
+
+ * when we call the components like this , we can destructure the data and use it like this 
+ * <RestaurantCard1 restaurant ={RestaurantList[3]}/>
+ * 
+ * or we can use it as normal props --> props.restaurant
+    const RestaurantCard1 = ({restaurant}) => {
+  const {name , cuisines , cloudinaryImageId , avgRating} = restaurant.data
+  console.log(name, cuisines , cloudinaryImageId , avgRating); --> data comes as expected
+  };
+
+Array properties destructure...
+object destructuring
+--> second Method
+
+property destructuring will not work directly
+--> when we call the component like this and it has child properties 
+it doesn't work bcz data is an object we can not destructure properties directly without key ...so it doesn't work, so we have done individual destrtucturing of props in 3rd method
+
+ * 
+ * <RestaurantCard1 restaurant ={RestaurantList[0].data}/>
+ * 
+ * 
+const RestaurantCard = ({name , cuisines , cloudinaryImageId , avgRating }) => {
+console.log(name, cuisines , cloudinaryImageId , avgRating); //---> undefined
+};
+
+// 3rd Method
+//individual destructring of properties and this work when we call our component as
+/***
+ * 
+ * <RestaurantCard
+name={RestaurantList[0].data.name}
+cuisines={RestaurantList[0].data.cuisines}
+cloudinaryImageId={RestaurantList[0].data.cloudinaryImageId}
+avgRating={RestaurantList[0].data.avgRating}
+/> 
+
+const RestaurantCard = ({name , cuisines , cloudinaryImageId , avgRating }) => {
+  console.log(name, cuisines , cloudinaryImageId , avgRating); //---> data comes as expected
+  };
+
+***/
+
+// 4th Method
+// using spread operator and destructuring properties
+/****
+   *spread all the properties of data and use it in component
+   * Componenet Calling
+   * 
+   *  <RestaurantCard
+          {...RestaurantList[0].data}
+        />
+        <RestaurantCard
+           {...RestaurantList[1].data}
+        />
+        <RestaurantCard
+           {...RestaurantList[2].data}
+        />
+
+        *****render of component********
+
+        const RestaurantCard = ({name , cuisines , cloudinaryImageId , avgRating }) => {
+        console.log(name, cuisines , cloudinaryImageId , avgRating); //---> data comes as expected
+  };
+   */
+
+ DOM stands for “Document Object Model” which is essentially the UI of an application. 
+
+Virtual DOM --> its used in Computer concept
+
+How Virtual DOM works?
+
+React uses Virtual dom(replica of actual DOM) --> direct updation will not happen on the actual DOM instead it will happen on the virtual dom . 
+* For every update done on the Virtual DOM, React compares the Virtual DOM with a snapshot of the initial state before the update was done. So, with the help of this comparison done by react js, it automatically figures out which part of your react component needs to be updated. --> React uses what we call the diffing algorithm to do this and the process of using this diffing algorithm is called diffing. 
+
+In React --> it uses concept of virtual DOM --> react keeps representation of actual DOM with us --> this is virtual DOM
+why Virtual DOM --> bcz we need this for reconcilation -->  when we write our code , before it gets repicated to the actual DOM  it gets updated to the virtual DOM--> then react uses reconcilation algorithm to find difference between updated virtual DOM and the snapshot of the actual DOM and then react finds the difference and it updates only that small portion of difference to the Actual DOM rather than whole application --> this is called diffing algorithm --> the whole process is called reconcilation
+
+Advantages of Virtual DOM:
+
+Speed and performance boost
+Lightweight
+It is simple and clear
+Amazing diffing algorithm
+It can be used on other frameworks not just react
+
+Disadvantages:
+Higher memory usage problems as the diffing algorithms need to keep comparing the elements to know which components needs to be updated or changed.
+It is not easily integrated into many other frameworks.
+You can’t use it or target template engines.
+
+why react and other Frameworks uses Virtual DOM:
+Boosts Performance.
+Very fast in DOM update.
+Allows you to write declarative contents.
+Simple and less complexity is involved.
+Light weighted.
+Helps keep your UI clean and updates on the required component in your application.
+Compile-time change optimization.
+Easy change detection
+
+
+Ex: I have 4 div element --> another div i will add to the DOM --> then react will render all nodes -> bcz all are div itself --> but when we have 1 div and 1 img --> react can know that 1 div and 1 img it will render only div node --> but in the first case we don't have any identification --> so here react has concept called "KEYS" where react uses unique identication to each div --> so when we modify anything react render only the div which needs to updated --> so giving unique idenitication to the each element in react is very important to avoid unnecessary re-renderings.
+
+
+why index is not used as KEYS?
+
+React Fiber?
+New reconcilation engine for react 16 and it is responsible for diffing
+
+
+
