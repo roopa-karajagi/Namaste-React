@@ -1,15 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-//Named Import
+// default Import
 import HeaderComponent from "./components/header/Header";
 import Section from './components/section/Banner'
 import Body from "./components/main/Body";
 import Footer from "./components/footer/Footer";
 
 
-//default Import
+//Named Import --> we have to use the curly braces to import the files
 /***** 
  * import { Title } from './components/Header'
+ * import HeaderComponent ,{Title} from './components/header/Header;
  * /
 
 /***
@@ -38,6 +39,23 @@ import Footer from "./components/footer/Footer";
 // React.createElement ==> Object ==> render HTML(DOM)
 // Key and Id is different : React keeps track of key to comapre the elements
 
+
+
+
+//First structure a layout
+const AppLayout = () => {
+  return (
+    <React.Fragment>
+      <HeaderComponent />
+      <Section />
+      <Body />
+      <Footer />
+    </React.Fragment>
+  );
+};
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<AppLayout />);
 
 
 // config Driven UI:
@@ -75,17 +93,3 @@ const config = [
   },
 ];
 
-//First structure a layout
-const AppLayout = () => {
-  return (
-    <React.Fragment>
-      <HeaderComponent />
-      <Section />
-      <Body />
-      <Footer />
-    </React.Fragment>
-  );
-};
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<AppLayout />);

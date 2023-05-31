@@ -2,19 +2,16 @@ import LogoImage from  '../../../assets/logo.jpg'
 import './header.css'
 
 
-//Title of the APp
+//Title of the APp /named import
 export const Title = () => (
     <div className="title_comp">
       <a href="/">
         <img className="logo" src={LogoImage} alt="Food villa" />
       </a>
-     <div className="title" id="title">
-      Food Villa
-     </div>
     </div>
   );
 
-// Header Component Rendering
+// Header Component Rendering //default imports
   //composing Components
 const HeaderComponent = () => {
     return (

@@ -1,7 +1,6 @@
 .card {
     position: relative;
     background: #fff;
-    height: 320px;
     border-radius: 5px;
     box-shadow: 3px 3px 5px #0000004f;;
    width:calc(350px - 20px);
@@ -12,31 +11,27 @@
 }
 .card-in {
     padding: 6px;
-    width:calc(350px - 55px);
-}
-.card-in h2 , .card-in h3 {
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
 }
 
-.card-in h2:hover , .card-in h3:hover {
-   overflow: visible;
-   word-wrap: break-word;
+.card img {
+    width: 100%;
+    height: 250px;
+    transition: opacity .3s ease-out;
+    background: #eef0f5;
 }
-.card-in h2 {
+.card-title {
+    font-weight: 500;
+    word-break: break-word;
     font-size: 20px;
     color: black;
-    font-weight: bold;
-    word-break: break-word;
-}
-
-.card-in h3 {
+  }
+  
+  .card-tags {
     color: #686b78;
-    font-weight: 500;
-    font-size: 16px;
-    margin: 4px 0;
-}
+      font-size: 16px;
+      margin: 4px 0;
+  }
+  
 .avg-rate {
     color: black;
     background-color: orange;
@@ -49,23 +44,29 @@
     font-weight: 700;
 }
 
-.card-link > img {
+/* .card-link > img {
     transition: opacity .3s ease-out;
     background: #eef0f5;
     width: 100%;
     position: relative;
-}
+} */
 
 
 @media screen and  (min-width: 650px) {
     .card {
-        width:calc(20% - 2%);
+        width:calc(100% - 72.6%);
     }
 }
 
 
 @media screen and  (min-width: 950px) {
     .card {
-        width:calc(40% - 20%);
+        width:calc(100% - 71.6%);
+    }
+}
+
+@media screen and  (min-width: 1200px) {
+    .card {
+        width:calc(100% - 79.6%);
     }
 }
