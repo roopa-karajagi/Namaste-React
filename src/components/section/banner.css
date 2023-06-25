@@ -1,16 +1,18 @@
 .img-section {
-    height: 400px;
-    max-width: 100%;
+    height: 365px;
+    width: 100%;
+    position: relative;
 }
 
 .img-section img {
-    width: 100%;
-    object-position: center;
+    display: block;
+    width: calc(100% - 1%);
     object-fit: cover;
     height: 100%;
-    position: relative;
+    position: absolute;
     border-radius: 1%;
-    transform: skewX(-6deg);
+    margin-left: 1px;
+    transform: skewX(-3deg);
     box-shadow: -10px 1px 9px 0px rgb(171 90 6 / 45%), 20px -4px 20px -20px rgb(0 0 0 / 45%), 20px 17px 20px -20px rgb(103 80 19 / 45%), 14px 1px 20px -20px rgb(172 0 0 / 45%);
 }
 

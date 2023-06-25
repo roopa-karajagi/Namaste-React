@@ -25,7 +25,7 @@ const HeaderComponent = () => {
         Food Villa
       </div>
       <nav className="nav-items">
-        <ul>
+        <ul className="list-items">
           <Link to="/">
           <li>Home</li>
           </Link>

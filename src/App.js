@@ -82,11 +82,11 @@ const config = [
 //First structure a layout
 const AppLayout = () => {
   return (
-    <React.Fragment>
+    <div className="wrapper">
       <HeaderComponent />
         <Outlet />
       <Footer />
-    </React.Fragment>
+    </div>
   );
 };
 
