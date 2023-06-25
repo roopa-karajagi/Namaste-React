@@ -1,0 +1,80 @@
+why React is so fast?
+
+1) Virtual DOM --> representation of actual DOM(at the end of the day it is object)
+2) Reconcilation --> it is the process which uses diff algorithm to know what is difference between 2 trees(virtual DOM and actual DOM) and update in on UI 
+3) Diff Algorithm --> algorithm --> the current tree is compared by changed tree and react updates only required node and re-render page to update only specific portion on UI
+
+when the data change from one state to another state --> react quickly calucates the difference between objects and it quickly updates to required node--> it is nothing but  DOM manipulation --> it is very fast.
+
+Core of React --> super poweful Diff algorithm--> fast DOM manipulation
+
+Expensive Operation --> DOM manipulation --> react does it very fast bcz of that react is fast.
+It compares 2 trees and updates only which is required(difference between 2 trees) on UI
+React Fiber --> It is new feature of Reconcilation which is used by react 
+
+React doesn't  track the  normal variables , it only tracks local state variable --> that is the reason we use state variable --> we use useState to define the state.
+
+whenver the state changes react re-renders(something refreshes) component and change only the required part.
+
+
+Microservices:
+
+Authentication and Autorization --> Authentication is userName and pwd(Login and Logout) and Authorization is checking the roles , for which application the user has access to view/edit/read pages
+
+
+2methods to call API 
+
+1st method: --> 
+when users loads the page --> call the api --> render page 
+                                (takes 300 ms) --> updated UI in 500ms
+
+2nd Method -->
+
+when user loads the page --> render intial page on UI --> call the API --> update UI --> (BEST MEthod to use it for better user experience) 
+
+useEffect(is the best hook on react) --> it is called only one time if it has dependency array as EMPTY
+if we don't use dependency array it will be called every render--> not feasible and not performant
+
+so it is very importnant to add dependency array on useEffect that is why we use it to fetch the data and update the state.
+
+--> useEffect is called after initial render
+
+empty dependency render --> once after render
+dependency array [searchTxt] --> it is called after intial render + it is called after every render when state of searchTxt input change
+
+//Conditional Rendering
+
+  // IF restaurant is empty --> Shimmer UI
+  // If restaurant has data --> Load actual data
+
+
+How do you Avoid render a component 
+
+we can use below code
+  if(!allRestaurantData) return null;
+
+  OR 
+  we can use optional chaining to avoid error at the early stage of defining variable 
+
+  allRestaurantData?.data
+
+grid -area property
+  grid-row-start / grid-column-start / grid-row-end / grid-column-end.
+
+  Use the grid-column property to specify where to place an item.
+
+Item1 will start on column 1 and end before column 5: -- > 1 / 5
+
+1 / span 5 --> it will span till 5 columns
+
+{} --> In the curly braces we can write JS expressions not JS statements
+
+Ex:
+{
+let a=10;
+console.log(a);
+} --> THis is not allowed --> bcz it is 2 js statements
+
+{
+    ((a=10) , console.log(a)) --> this can be done bcz it becomes JS expressions
+}
