@@ -1,36 +1,35 @@
 .overlay {
-    width: 520px;
-    padding: 1.5rem;
-    box-shadow: -1px -20px 20px 11px rgb(82 127 18 / 25%);
-    position: relative;
-    top: -60%;
-    display: inline-block;
-    left: 60%;
-    margin: -60px auto;
-    background-color: transparent;
     opacity: .6;
-    color: rgb(13, 13, 13);
-    border-radius: 14px;
-    background-color: navajowhite;
+    color: #0d0d0d;
     z-index: 999;
     text-align: center;
+    background-color: #ffdead;
+    border-radius: 10px;
+    width: 420px;
+    margin: 20px auto;
+    padding: 16px;
+    display: inline-block;
+    position: absolute;
+    bottom: 8%;
+    left: 60%;
+    box-shadow: -1px -20px 20px 11px #527f1240;
 }
 
 .overlay h1 {
-    font-size: 36px;
-    font-weight: bold;
-    margin: 10px;
+margin: 10px;
+font-size: 32px;
+font-weight: bold;
 }
 .overlay span {
-    font-size: 24px;
-    font-weight: 600;
+font-size: 18px;
+font-weight: 600;
 }
 .btn-order {
-    border-radius: 0 ;
-    font-weight: 700;
-    cursor: pointer;
-    background-color: orange ;
-    border: none;
-    color: rgb(13, 13, 13);
-    margin: 20px auto 0px;
+border-radius: 0 ;
+font-weight: 700;
+cursor: pointer;
+background-color: orange ;
+border: none;
+color: rgb(13, 13, 13);
+margin: 18px auto 0px;
 }

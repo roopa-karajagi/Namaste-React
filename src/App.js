@@ -4,13 +4,12 @@ import ReactDOM from "react-dom/client";
 import HeaderComponent from "./components/header/Header";
 import Body from "./components/main/Body";
 import Footer from "./components/footer/Footer";
-import { createBrowserRouter , RouterProvider ,Outlet } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import About from "./components/about/About";
 import Contact from "./components/contact/Contact";
 import ErrorComp from "./components/error/Error";
 import Section from "./components/section/Banner";
 import RestaurantMenu from "./components/main/restaurant/RestaurantMenu";
-
 
 //default Import
 /***** 
@@ -42,7 +41,6 @@ import RestaurantMenu from "./components/main/restaurant/RestaurantMenu";
 
 // React.createElement ==> Object ==> render HTML(DOM)
 // Key and Id is different : React keeps track of key to comapre the elements
-
 
 // config Driven UI:
 
@@ -82,11 +80,11 @@ const config = [
 //First structure a layout
 const AppLayout = () => {
   return (
-    <React.Fragment>
+    <div className="wrapper">
       <HeaderComponent />
         <Outlet />
       <Footer />
-    </React.Fragment>
+    </div>
   );
 };
 
@@ -98,36 +96,37 @@ const AppLayout = () => {
  * Client Side Routing
  * Server Side Routing -- every time there is change of route it should get it from backend, we have page refresh every when we do this
  * client side render --> According Route we are just rendering a component
- * 
- * 
+ *
+ *
  */
 
+// Outlet is the place we fill configuration of routes --> all the children of the applayout goes inside outlet --> it is the structure where react router dom connects DOM with our defined routes like below connected with outlet
 
 const appRouter = createBrowserRouter([
   {
-    path:'/',
-    element:<AppLayout />,
+    path: "/",
+    element: <AppLayout />,
     errorElement: <ErrorComp />,
-    children: [ 
+    children: [
       {
-        path:'/',
-        element:<Body />
+        path: "/",
+        element: <Body />,
       },
       {
-      path: '/about',
-      element: <About />
-    },
-  {
-    path:'/contact',
-    element:<Contact/>
+        path: "/about",
+        element: <About />,
+      },
+      {
+        path: "/contact",
+        element: <Contact />,
+      },
+      {
+        path: "/restaurant/:resId",
+        element: <RestaurantMenu />,
+      },
+    ],
   },
-  {
-    path:'/restaurant/:resId',
-    element:<RestaurantMenu/>
-  }
-]
-}]
-  )
+]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
