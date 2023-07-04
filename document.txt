@@ -1,0 +1,34 @@
+useEffect is called after the initial render --> so we use to do all the actions which we want to do after the initial render.
+
+Never create component inside component.
+Never write useState inside IF condition
+React doesn't like inconsistency and its not optimized way to write 
+Never write useState in for loop condition
+
+we can create multiple useEffect inside our component
+
+Be concious about which package to use for the application
+
+createBrowserRouter: used to define routes inside this --> it takes configuration as array of objects
+const approuter = createBrowserRouter([
+    {path: '/',
+    element: <component/>} ,
+    {},...])
+
+    RouterProvider --> we need to provide router to root render to render the application 
+    root.render(<RouterProvider router={approuter} />)
+
+SPA -- Single Page Application
+
+2 sides of routing --> 1) Client Side Routing 2) Server Side Routing
+
+client side routing --> doesn't fetch the component from server , its already written code for compoenent in application , we are using it.
+
+
+to read dynamicId we use useParams hook
+to read error from error Element we use useRouteError
+
+ benefits of using Component structure in react and splitting code 
+--> Modular, readable,reusable,testable, maintainable
+
+ config driven routes , config driven UI

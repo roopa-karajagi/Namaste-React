@@ -1,5 +1,5 @@
 import { useState } from "react";
-import LogoImage from "../../../assets/logo.jpg";
+import LogoImage from  "../../assets/logo.jpg"
 import { Link } from 'react-router-dom';
 import Section from "../section/Banner";
 import "./header.css";
@@ -25,7 +25,7 @@ const HeaderComponent = () => {
         Food Villa
       </div>
       <nav className="nav-items">
-        <ul>
+        <ul className="list-items">
           <Link to="/">
           <li>Home</li>
           </Link>

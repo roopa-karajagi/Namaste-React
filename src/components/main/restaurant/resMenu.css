@@ -1,0 +1,18 @@
+.menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.menuItem {
+   display: flex;
+   flex-direction: column;
+    gap:5
+}
+
+.menuList h1 {
+    margin-bottom: 20px;
+}
+.menuList .menuName ul li{
+    list-style:disc;
+}
