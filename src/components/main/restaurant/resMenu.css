@@ -1,13 +1,14 @@
 .menu {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
 }
 
 .menuItem {
-   display: flex;
-   flex-direction: column;
-    gap:5
+    flex-direction: column;
+    gap: 5px;
+    display: flex;
+    margin-right: 80px;
+    margin: 10px 80px 0px 20px;
 }
 
 .menuList h1 {

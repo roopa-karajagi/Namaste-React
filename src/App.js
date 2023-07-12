@@ -1,4 +1,4 @@
-import React, { Children } from "react";
+import React, { lazy ,Suspense} from "react";
 import ReactDOM from "react-dom/client";
 //Named Import
 import HeaderComponent from "./components/header/Header";
@@ -10,72 +10,27 @@ import Contact from "./components/contact/Contact";
 import ErrorComp from "./components/error/Error";
 import Section from "./components/section/Banner";
 import RestaurantMenu from "./components/main/restaurant/RestaurantMenu";
+import Shimmer from "./components/shimmer/Shimmer";
+// import InstaMart from "./components/Instamart/instamart";
 
-//default Import
-/***** 
- * import { Title } from './components/Header'
- * /
+const InstaMart = lazy(() => import("./components/Instamart/instamart"));
+//dynamic loading --> upon on demand loading --> upon render --> react suspense loading
 
-/***
- *  - Header
- *      - logo(Title)
- *       - delivery location(optional)
- *        - nav Items(right)
- *         - cart
- *  - Body
- *      - Search Bar
- *    - Reastaturant list
- *         - Reastaurant Card(Information -- Many Cards)
- *              -Image
- *              -Name
- *              - Rating
- *              -cusines(food varieties)
- *
- *
- *    - Footer
- *      -- links
- *      -- social Icons
- *      -- copyright
- *
- */
+//if we don't use suspense --> then react will render --> but will not show up the page -->
+//so we need to use suspense --> so that react will wait until the component loads.
 
-// React.createElement ==> Object ==> render HTML(DOM)
-// Key and Id is different : React keeps track of key to comapre the elements
+//we can use fallback in suspense to show the user until page loads
 
-// config Driven UI:
 
-const config = [
-  {
-    type: "carousel",
-    cards: [
-      {
-        offerName: "50% off",
-      },
-      {
-        offerName: "No Delivery Charge",
-      },
-    ],
-  },
-  {
-    type: "restaurants",
-    cards: [
-      {
-        name: "Burger King",
-        image:
-          "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/gyiuf0vilqvtuhvz77vb",
-        cusines: ["Burger", "Amarican"],
-        rating: "4.4",
-      },
-      {
-        name: "KFC",
-        image:
-          "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/gyiuf0vilqvtuhvz77vb",
-        cusines: ["Burger", "Amarican"],
-        rating: "4.4",
-      },
-    ],
-  },
-];
+// Never ever load dynamic component inside another component ..it should be seperate..
+
+//when we load the application in lazy it will render at the time we click on it ..it doesn't render when we load our application
+//but once it is loaded , we can use it bcz it is SPA.
+
+
+
+
+
 
 //First structure a layout
 const AppLayout = () => {
@@ -124,6 +79,10 @@ const appRouter = createBrowserRouter([
         path: "/restaurant/:resId",
         element: <RestaurantMenu />,
       },
+      {
+        path:"/instamart",
+        element: <Suspense fallback={<Shimmer/>}><InstaMart /></Suspense>
+      }
     ],
   },
 ]);

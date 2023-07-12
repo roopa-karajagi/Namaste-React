@@ -1,7 +1,7 @@
 import { useState } from "react";
 import LogoImage from  "../../assets/logo.jpg"
 import { Link } from 'react-router-dom';
-import Section from "../section/Banner";
+import useOnline from "../../utils/useOnline";
 import "./header.css";
 
 //Title of the APp
@@ -17,6 +17,8 @@ export const Title = () => (
 //composing Components
 const HeaderComponent = () => {
   const [isLoggedIn , setIsLoggedIn] = useState(false);
+  const isOnline = useOnline();
+  
   return (
     <>
     <div className="header_comp">
@@ -42,6 +44,9 @@ const HeaderComponent = () => {
           <Link to="/cart">
           <li>Cart</li>
           </Link>
+          <Link to="/instamart">
+            <li>InstaMart</li>
+          </Link>
           
         </ul>
       </nav>
@@ -52,6 +57,9 @@ const HeaderComponent = () => {
 
         ((a =10 ) , console.log(a))
       } */}
+      <div>
+      { !isOnline ?  '🔴' : '✅'}
+      </div>
       <div className="auth-buttons">
         {
             !isLoggedIn ? (

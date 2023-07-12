@@ -32,3 +32,66 @@ to read error from error Element we use useRouteError
 --> Modular, readable,reusable,testable, maintainable
 
  config driven routes , config driven UI
+
+ WHy Hooks:
+hooks are normal functions , we use hooks to export some logic from that function.
+
+code modularity means --> Breaking code into smaller chunks
+readability and reusability and code maintainability
+
+Lazy loading is the practice of delaying load or initialization of resources or objects until they're actually needed to improve performance and save system resources.
+
+//with the bundling of the code , will also do 
+1) bundle chunking
+2) Code splitting
+3)Lazy loading
+4)dynamic loading
+5)on Demand loading
+6) Dynamic import
+of the code--> this will help in system design interview
+
+For every large size application we do chunking of the code..ex: In make my trip , For flights one bundle of js is loaded , for trains another bundle of code is loaded etc...
+
+
+Like in iterview , 
+
+we need to tell , we compress the images and put it in cdn , we use caching , we use optimization of the code , we use bundling ..and all other things to make application as performant.
+
+
+//default Import
+/***** 
+ * import { Title } from './components/Header'
+ * /
+
+/***
+ *  - Header
+ *      - logo(Title)
+ *       - delivery location(optional)
+ *        - nav Items(right)
+ *         - cart
+ *  - Body
+ *      - Search Bar
+ *    - Reastaturant list
+ *         - Reastaurant Card(Information -- Many Cards)
+ *              -Image
+ *              -Name
+ *              - Rating
+ *              -cusines(food varieties)
+ *
+ *
+ *    - Footer
+ *      -- links
+ *      -- social Icons
+ *      -- copyright
+ *
+ */
+
+// React.createElement ==> Object ==> render HTML(DOM)
+// Key and Id is different : React keeps track of key to comapre the elements
+
+// config Driven UI:
+
+
+TRY to do custom hook like useState --> return an array 
+
+const [getLoacalStorage , setLocalStorage] = useLocalStorage();

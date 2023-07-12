@@ -5,6 +5,8 @@
     font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
     position: relative;
     padding: 39px;
+    margin-bottom: 0px;
+    height: calc(1080px - 904px);
 }
 .rest_header h1 {
 font-weight: 600;

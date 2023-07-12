@@ -68,6 +68,7 @@
 .card-order > div {
     position: absolute;
     bottom: -10%;
+    color: black;
 }
 
 .card-order > button {

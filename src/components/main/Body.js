@@ -1,10 +1,11 @@
 import { RestaurantCard } from "./restaurant/RestaurantCard";
-import { restaurantList } from "../../constantData";
 import { useEffect, useState } from "react";
 import "./body.css";
 import Shimmer from "../shimmer/Shimmer";
 import Section from "../section/Banner";
 import { filterData } from "../../utils/Helper";
+import { FETCH_RESTAURANT_URL } from "../../constantData";
+import useOnline from "../../utils/useOnline";
 
 
 //what is state and why
@@ -12,36 +13,62 @@ import { filterData } from "../../utils/Helper";
 //what is useState
 
 //it is like passing an arguments to functions and can be used as params in our function
+
+
 const Body = () => {
+
+
   //If we just call the API like this we get CORS error bcz browser doesn't allows to do this connection from local host to any api which are on different origins.
 
-  const [searchTxt, setSearchTxt] = useState("");
-  const [allRestaurantData, setAllRestaurantData] = useState([]);
-  const [filteredRest, setFilteredRest] = useState([]);
   // const [loading, setLoading] = useState(false);
 
+  const [searchTxt, setSearchTxt] = useState("");
+  const [filteredRest , setFilteredRest] = useState([]);
+  const [allRestaurantData , setAllRestaurantData] = useState([]);
+
+
+  //by adding an custom hook on this, we need to wait for sometime to render the application ,as we are doing async operation on the hook, so it didn't render my body
+
+  // const  { allRestaurantData }  = useRestaurant();
+  // console.log("useResutal" , useRestaurant());
+
+  // why we need allRestaurantData when we have filtered data 
+  /*
+  *
+  *bcz when we search will have only filtered data,and the data got updated with filtered data , so when we are searching we don't want to loose all restaurants data , so we need this.
+  *
+  * *
+  */
+
+ 
+
   useEffect(() => {
-    // setLoading(true);
-    setSearchTxt('');
     //API restaurants
+    setSearchTxt('');
     getRestaurants();
   }, []);
 
   async function getRestaurants() {
-    const res = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9654796&lng=77.7184638&page_type=DESKTOP_WEB_LISTING"
-    );
+    const res = await fetch(FETCH_RESTAURANT_URL);
     const data = await res.json();
     //optional chaining
     const actualData = data?.data?.cards[2]?.data?.data?.cards;
+    console.log("actual data" , actualData);
+    
     setAllRestaurantData(actualData);
     setFilteredRest(actualData);
-    // setLoading(false);
   }
 
-  // why we need allRestaurantData when we have filtered data 
-  //bcz when we search will have only filtered data , and the data got updated with filtered data , so when we are searching we don't want to loose all restaurants data , so we need this.
+  //any name can be given
+  const isOnline = useOnline();
 
+  //windows key + . --> to get the shortcut for emojis
+
+  // console.log("online in BOdy" , isOnline);
+  if(!isOnline) {
+    return <h1> 🔴 OOPS!!! Check your Internet connection</h1>
+  }
+  
   //not render  component  --> early return
   if(!allRestaurantData) return null;
   return (
