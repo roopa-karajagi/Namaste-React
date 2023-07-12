@@ -16,8 +16,8 @@ import Shimmer from "./components/shimmer/Shimmer";
 const InstaMart = lazy(() => import("./components/Instamart/instamart"));
 //dynamic loading --> upon on demand loading --> upon render --> react suspense loading
 
-//if we don't use suspense --> then react will render --> but will not show up the page -->
-//so we need to use suspense --> so that react will wait until the component loads.
+//if we don't use suspense --> then react will render -->  will not show up the page for the first time -->
+//so we need to use suspense --> so that react will wait until the component loads. --> it will render only when we click on that component
 
 //we can use fallback in suspense to show the user until page loads
 
@@ -25,11 +25,7 @@ const InstaMart = lazy(() => import("./components/Instamart/instamart"));
 // Never ever load dynamic component inside another component ..it should be seperate..
 
 //when we load the application in lazy it will render at the time we click on it ..it doesn't render when we load our application
-//but once it is loaded , we can use it bcz it is SPA.
-
-
-
-
+//but once it is loaded , we can use it for further sequence bcz it is SPA.
 
 
 //First structure a layout
