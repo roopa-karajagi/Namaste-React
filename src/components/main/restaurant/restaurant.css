@@ -1,10 +1,11 @@
 .card {
-    position: relative;
     background: #fff;
-    height: 320px;
     border-radius: 5px;
-    box-shadow: 3px 3px 5px #0000004f;;
-   width:calc(350px - 20px);
+    width: 340px;
+    min-height: 320px;
+    margin: 10px 0;
+    position: relative;
+    box-shadow: 3px 3px 5px #0000004f;
 }
 .card-link {
     position: relative;
@@ -67,6 +68,7 @@
 .card-order > div {
     position: absolute;
     bottom: -10%;
+    color: black;
 }
 
 .card-order > button {
@@ -85,7 +87,7 @@
 
 
 
-@media screen and  (min-width: 650px) {
+/* @media screen and  (min-width: 650px) {
     .card {
         width:calc(20% - 2%);
     }
@@ -96,4 +98,4 @@
     .card {
         width:calc(40% - 20%);
     }
-}
+} */

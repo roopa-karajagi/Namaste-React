@@ -1,0 +1,10 @@
+.footer {
+    position: fixed;
+    height: 50px;
+    left: 50%;
+    display: inline;
+    border: 1px solid black;
+    font-size: 48px;
+    bottom: 0;
+    z-index: 9999;
+}
