@@ -14,21 +14,22 @@ font-size: 28px;
 }
 
 .rest_header {
-  height: 72px;
-  display: flex;
-  align-items: center;
   justify-content: space-between;
-  margin: 10px 25px;
-  position: relative;
-}
-.rest-content {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 48px;
-    border-top: 1px solid #e9e9eb;
+    align-items: center;
+    height: 72px;
     margin: 10px 25px;
-    margin-top: -10px;
-    padding: 39px 0px;
+    display: flex;
+    border-bottom: 1px solid #e9e9eb;
+}
+
+.rest-content {
+  border-top: 1px solid #e9e9eb;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 340px);
+  grid-gap: 22px;
+  justify-content: space-between;
+  margin: -10px 23px 56px;
+  padding-top: 39px;
 }
 
 .search-container {

@@ -7,6 +7,7 @@ export const RestaurantCard = ({
   cuisines,
   cloudinaryImageId,
   avgRating,
+  slaString,
   costForTwoString,
   id
 }) => {
@@ -19,14 +20,21 @@ export const RestaurantCard = ({
           height={180}
           alt="card_image"
         />
-        <div className="card-in">
-        <h2>{name}</h2>
-        <h3>{cuisines.join(", ")}</h3>
-        <button type="button" className="avg-rate">{avgRating}</button>
+        <div className="card-details">
+        <div className="res-name">{name}</div>
+        <div className="res-sub">{cuisines.join(", ")}</div>
         </div>
-        <div className="card-order">
-          <div className="cost">{costForTwoString}</div>
-          <button className="btn-cost">Order Now </button>
+        <div className="card-rating">
+          <div className="avg-rating">
+            <span className="icon-start"></span>
+            <span>{avgRating}</span>
+        </div>
+        <div>
+        <span style={{display:"inline-block",fontSize: "24px" , color: "#000000",padding: " 5px 10px"}}>•</span>
+        </div>
+        <div className="time">{slaString}</div>
+        <span style={{display:"inline-block",fontSize: "24px" , color: "#000000",padding: "5px 10px"}}>•</span>
+        <div className="cost"> {costForTwoString}</div>
         </div>
       </Link>
     </div>
