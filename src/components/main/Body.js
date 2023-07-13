@@ -98,7 +98,7 @@ const Body = () => {
              <div className="search-container">
                <input
                  type="text"
-                 className="search-input"
+                 className="search-input border-solid border-2 border-orange-400"
                  name="searchTxt"
                  placeholder="Search...."
                  value={searchTxt}
@@ -106,7 +106,7 @@ const Body = () => {
                />
                <button
                  type="button"
-                 className="btn search-btn"
+                 className="btn p-2 px-6 bg-orange-400 shadow-sm text-black text-xl font-md"
                  onClick={() => {
                    //need to filter Data
                    const data = filterData(searchTxt, allRestaurantData);

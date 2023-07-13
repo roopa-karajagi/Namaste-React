@@ -11,6 +11,7 @@ import ErrorComp from "./components/error/Error";
 import Section from "./components/section/Banner";
 import RestaurantMenu from "./components/main/restaurant/RestaurantMenu";
 import Shimmer from "./components/shimmer/Shimmer";
+import './App.css'
 // import InstaMart from "./components/Instamart/instamart";
 
 const InstaMart = lazy(() => import("./components/Instamart/instamart"));
