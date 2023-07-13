@@ -1,7 +1,4 @@
 .header_comp {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
     margin: 15px;
     align-items: center;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(30, 87, 185, 0.388) 0px 1px 3px -1px;
@@ -11,10 +8,6 @@
     padding-left: 12px;
 }
 
-.title_comp >  a img {
-    width: 100px;
-    border-radius: 10px;
-}
 .title {
     text-align: center;
     color: red;
@@ -34,7 +27,7 @@
 .list-items li {
     padding: 8px;
     font-size: 16px;
-    font-weight: 700;
+    font-weight: 600;
 }
 .list-items a {
     text-decoration: none;

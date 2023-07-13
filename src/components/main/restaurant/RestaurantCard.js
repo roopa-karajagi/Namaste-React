@@ -16,8 +16,8 @@ export const RestaurantCard = ({
     <div className="card">
       <Link to={`/restaurant/${id}`} className="card-link">
         <img
+        className= "h-48 w-full"
           src={`${IMG_CDN_URL}${cloudinaryImageId}`}
-          height={180}
           alt="card_image"
         />
         <div className="card-details">

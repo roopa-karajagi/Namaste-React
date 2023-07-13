@@ -1,5 +1,5 @@
 .overlay {
-    opacity: .6;
+    opacity: .7;
     color: #0d0d0d;
     z-index: 999;
     text-align: center;
@@ -16,11 +16,13 @@
 }
 
 .overlay h1 {
+    color:#0d0d0d;
 margin: 10px;
 font-size: 32px;
 font-weight: bold;
 }
 .overlay span {
+color:#0d0d0d;
 font-size: 18px;
 font-weight: 600;
 }

@@ -1,0 +1,46 @@
+why we use css frameworks and libraries like (bootstrap,tawlind,material Ui) etc
+--> TO write optimize css
+--> It saves time writing lot of features
+--> faster development
+--> to maintain consistency in building UI
+--> the job of processing inline css is heavey that is the one reason to use frameworks
+
+
+inline css in react
+
+const stylecss = {
+    background-color:red;
+}
+style ={to write js we use curly braces (stylecss)};
+style={{object to write css}} --> outside curly braces stands for js to write
+
+ways to write css
+inline css
+external css
+scss
+styled components
+bootstrap framework
+component libraries --> material UI , ant design,chakra,base Ui etc..
+tailwind CSS framework
+
+cons of using libraries
+
+1) Increase in bundle size
+2) Forced to use default structure of libraries, lot of pain to write customize css of compoenent
+
+Will learn and use tailwind frameworks
+
+Pros of tailwind css frameworks
+1) Css on the go(in the same file)
+2)reusability
+3)less bundle size
+4)Flexible UI(control over customization)
+
+
+postcssrc --> it is telling parcel to compile tailwind css into normal css , so that parcel can know that we are using talwind in our files that is the reason we use postcssrc
+
+COns:
+
+Non readable
+learning curve is little difficult
+so much of classes to add in one html page

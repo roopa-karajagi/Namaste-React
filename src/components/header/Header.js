@@ -8,7 +8,7 @@ import "./header.css";
 export const Title = () => (
   <div className="title_comp">
     <a href="/">
-      <img className="logo" src={LogoImage} alt="Food villa" />
+      <img className="h-24 w-24 rounded-xl" src={LogoImage} alt="Food villa" />
     </a>
   </div>
 );
@@ -21,7 +21,7 @@ const HeaderComponent = () => {
   
   return (
     <>
-    <div className="header_comp">
+    <div className="header_comp flex justify-between p-1">
       <Title />
       <div className="title" id="title">
         Food Villa
