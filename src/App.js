@@ -1,20 +1,20 @@
-import React, { lazy ,Suspense} from "react";
+import React, { lazy ,Suspense, useState} from "react";
 import ReactDOM from "react-dom/client";
 //Named Import
-import HeaderComponent from "./components/header/Header";
+import Header from "./components/header/Header";
 import Body from "./components/main/Body";
 import Footer from "./components/footer/Footer";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
-import About from "./components/about/About";
 import Contact from "./components/contact/Contact";
 import ErrorComp from "./components/error/Error";
-import Section from "./components/section/Banner";
 import RestaurantMenu from "./components/main/restaurant/RestaurantMenu";
 import Shimmer from "./components/shimmer/Shimmer";
 import './App.css'
+import UserContext from "./utils/userContext";
 // import InstaMart from "./components/Instamart/instamart";
 
 const InstaMart = lazy(() => import("./components/Instamart/instamart"));
+const About = lazy(()=> import("./components/about/About"))
 //dynamic loading --> upon on demand loading --> upon render --> react suspense loading
 
 //if we don't use suspense --> then react will render -->  will not show up the page for the first time -->
@@ -31,12 +31,20 @@ const InstaMart = lazy(() => import("./components/Instamart/instamart"));
 
 //First structure a layout
 const AppLayout = () => {
+
+  const [user , setUser] = useState({
+    name:"Roopa Karajagi",
+    email:"Roopa.Karajagi@gmail.com"
+  })
+
   return (
+    <UserContext.Provider value={{user:user , setUser: setUser}}>
     <div className="wrapper">
-      <HeaderComponent />
+      <Header  />
         <Outlet />
       <Footer />
     </div>
+    </UserContext.Provider>
   );
 };
 
@@ -66,7 +74,11 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/about",
-        element: <About />,
+        element: (
+          <Suspense fallback={<h1>Loading....</h1>}>
+            <About/>
+          </Suspense>
+        ),
       },
       {
         path: "/contact",

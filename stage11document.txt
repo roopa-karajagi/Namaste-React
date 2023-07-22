@@ -1,0 +1,26 @@
+Props drilling --> passing the props from parent to multiple  child components and using it, is called props drilling.
+
+Cons of props drilling
+unnecessary of code
+unnecessary of componenet rendering bcz of props
+
+Lifting the state up --> passing the state from child to parent
+
+UI layer and Data layer
+
+UI Layer and Data layer work together to get the better user experience
+
+UI layer(View , core js , what we write in code, at the end of the day HTML , css what we see on UI page)
+Data Layer(passing data to components , states,props, context , API everything about data what we use for manipulation and to view on )
+Context: 
+context is kind of useState for all around the application
+context is central state(central data storage) for application...
+
+data managament is all about managing state , props and context etc...
+
+in class based components we use like below
+<UserContext.Consumer>
+{({user})=> <h4>{user.name} </h4>}
+</UserContext.Consumer>
+
+we use Context API to avoid Props drilling

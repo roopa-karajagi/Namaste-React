@@ -173,5 +173,5 @@ console.log(a);
 } --> THis is not allowed --> bcz it is 2 js statements
 
 {
-    ((a=10) , console.log(a)) --> this can be done bcz it becomes JS expressions
+    ((a=10) , console.log(a)) --> this can be done bcz it becomes JS expressions.
 }
