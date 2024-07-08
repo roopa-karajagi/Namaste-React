@@ -1,7 +1,7 @@
 import { RestaurantCard } from "./restaurant/RestaurantCard";
 import { useEffect, useState } from "react";
 import "./body.css";
-import Shimmer from "../shimmer/Shimmer";
+import {Shimmer , MainShimmer } from "../shimmer/Shimmer";
 import Section from "../section/Banner";
 import { filterData } from "../../utils/Helper";
 import { FETCH_RESTAURANT_URL } from "../../constantData";
@@ -27,6 +27,7 @@ const Body = () => {
   const [searchTxt, setSearchTxt] = useState("");
   const [filteredRest , setFilteredRest] = useState([]);
   const [allRestaurantData , setAllRestaurantData] = useState([]);
+  const [carousel , setCarousel] = useState([]);
 
 
   //by adding an custom hook on this, we need to wait for sometime to render the application ,as we are doing async operation on the hook, so it didn't render my body
@@ -52,13 +53,36 @@ const Body = () => {
 
   // useState --> comes from react package(which is writen by fb developer) which is used in defining the local state to use in compoenents
 
+
+  //adding allow cors: extension will resolve the issue of cross browser
+
   async function getRestaurants() {
     const res = await fetch(FETCH_RESTAURANT_URL);
-    const data = await res.json();
-    //optional chaining
-    const actualData = data?.data?.cards[2]?.data?.data?.cards;
-    console.log("actual data" , actualData);
-    
+    const json = await res.json();
+    // initialize checkJsonData() function to check Swiggy Restaurant data
+      async function checkJsonData(jsonData) {
+        try {
+          for(let i=0; i<=jsonData?.data?.cards.length;i++){
+            // initialize checkData for Swiggy Restaurant data
+            const cardData = jsonData?.data?.cards[i];
+            console.log("index" , i);
+            console.log("card Data" , cardData);
+            //optional chaining
+            const checkData = cardData?.card?.card?.gridElements?.infoWithStyle?.restaurants
+            // if checkData is not undefined then return it
+
+            console.log("check data" , checkData);
+            if(checkData !== undefined) {
+                return checkData;
+            }
+          }
+        }
+        catch(err) {
+          console.log("error" , err);
+        }
+      }
+    // call the checkJsonData() function which return Swiggy Restaurant data
+    const actualData =  await checkJsonData(json);
     setAllRestaurantData(actualData);
     setFilteredRest(actualData);
   }
@@ -86,7 +110,7 @@ const Body = () => {
   //not render  component  --> early return
   if(!allRestaurantData) return null;
   return allRestaurantData?.length === 0 ? <Shimmer /> : (
-    <>
+    <div className="body-content">
       <Section />
          <div className="rest_body">
            <div className="rest_header">
@@ -133,12 +157,12 @@ const Body = () => {
                </div>
              ) : (
                filteredRest?.map((item, index) => {
-                 return <RestaurantCard {...item.data} key={item.data.id} />;
+                 return <RestaurantCard {...item.info} key={item.info.id} />;
                })
              )}
            </div>
          </div>
-     </>
+     </div>
   )
 
   //above code can be written like below under {} or like above

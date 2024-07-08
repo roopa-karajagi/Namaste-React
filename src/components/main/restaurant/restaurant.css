@@ -1,56 +1,54 @@
 .card {
-    background: #fff;
     border-radius: 5px;
     width: 340px;
     min-height: 320px;
     margin: 10px 0;
-    position: relative;
+    position: relative;  
+}
+.card:hover {
     box-shadow: 3px 3px 5px #0000004f;
 }
+
 .card-link {
     position: relative;
     text-decoration: none;
-}
+  }
+  
 .card-details {
-    margin: 14px 8px;
+    padding: 14px 8px;
+    word-wrap: break-word;
 }
 .res-name {
-    font-size: 17px;
+    font-size: 20px;
     font-weight: 600;
     color: rgb(40, 44, 63);
-    word-break: break-word;
 }
 .res-sub {
     color: #686b78;
-    font-size: 13px;
+    font-size: 16px;
+    font-weight: 500;
     margin-top: 4px;
 }
 
 .card-rating {
     display: flex;
     align-items:center;
+    font-weight: bold;
     margin: 18px 8px;
-    font-size: 12px;
+    font-size: 16px;
     -ms-flex-pack: justify;
     justify-content: space-between;
     color: #535665;
 }
 .avg-rating {
     color: #fff;
+    border-radius: 6px;
     background-color: #48c479;
-    width: 42px;
-    height: 22px;
+    width: 56px;
+    height: 36px;
     padding: 2px 5px;
-    font-weight: 400;
-}
-.icon-start {
-    font-size: 10px;
-    margin-right: 4px;
-    position: relative;
-    top: -1px;
-}
-.icon-start::before {
-    content: "\2605";
+    font-size: 16px;
+    font-weight: 600;
 }
 /* .avg-rate {
     color: black;

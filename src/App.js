@@ -8,10 +8,13 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import About from "./components/about/About";
 import Contact from "./components/contact/Contact";
 import ErrorComp from "./components/error/Error";
-import Section from "./components/section/Banner";
+import Cart from './components/cart/Cart'
 import RestaurantMenu from "./components/main/restaurant/RestaurantMenu";
-import Shimmer from "./components/shimmer/Shimmer";
+import LoginComponent from './components/login/Login'
+import {Shimmer} from "./components/shimmer/Shimmer";
+import { Provider } from "react-redux";
 import './App.css'
+import store from "./utils/store/store";
 // import InstaMart from "./components/Instamart/instamart";
 
 const InstaMart = lazy(() => import("./components/Instamart/instamart"));
@@ -32,11 +35,13 @@ const InstaMart = lazy(() => import("./components/Instamart/instamart"));
 //First structure a layout
 const AppLayout = () => {
   return (
+    <Provider store={store}>
     <div className="wrapper">
       <HeaderComponent />
         <Outlet />
       <Footer />
     </div>
+    </Provider>
   );
 };
 
@@ -79,6 +84,14 @@ const appRouter = createBrowserRouter([
       {
         path:"/instamart",
         element: <Suspense fallback={<Shimmer/>}><InstaMart /></Suspense>
+      },
+      {
+        path:'/cart',
+        element:<Cart />
+      },
+      {
+        path:'/login',
+        element:<LoginComponent />
       }
     ],
   },

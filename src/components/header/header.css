@@ -1,6 +1,17 @@
+.fixed-header {
+position: fixed;
+width: 100%;
+top: 0;
+z-index: 1000;
+background: #fff;
+contain: size layout style;
+}
+
 .header_comp {
-    margin: 15px;
+    height: 110px;
+    margin: 0 15px 15px;
     align-items: center;
+    background-color: #fff;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(30, 87, 185, 0.388) 0px 1px 3px -1px;
 }
 .title_comp {

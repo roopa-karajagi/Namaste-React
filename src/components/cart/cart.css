@@ -1,0 +1,26 @@
+.rupee::before {
+    content: "\20B9";
+    margin-right: 0.1rem;
+}
+
+.cart-content {
+    width: 100%;
+    overflow: auto;
+    padding-top: 120px;
+}
+
+.cart-buttons {
+    cursor: pointer;
+    color: #60b246;
+    background-color: #fff;
+    border: 1px solid #d4d5d9;
+    border-radius: 4px;
+    justify-content: space-around;
+    align-items: center;
+    width: 96px;
+    height: 36px;
+    margin-top: calc(96px - 48px);
+    font-size: 18px;
+    display: flex;
+    box-shadow: 0 3px 8px #e9e9eb;
+}

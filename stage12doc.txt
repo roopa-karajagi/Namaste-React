@@ -1,0 +1,54 @@
+Redux:
+Central single state for data storage..we use redux instead of creating different context.
+
+why redux:
+TO manage data layer of the application
+
+we are using redux toolkit in our application
+
+we can have multiple different context but we have 1 single store to hold all data for the application 
+
+
+redux/toolkit --> core of the Redux
+react-redux --> bridge(bind) between the react and redux
+Redux Architecture: explained in document
+
+
+create store 
+    -- configureStore() --> RTK 
+
+Provider store to app   
+    --<Provider store={store} /> --> import from react-redux
+
+Slice
+    --createSlice({
+        name:"",
+        initialState:{
+            items:[]
+        },
+        reducers:{
+            actions: reducer function corresponding to action
+            addItem:(state , action) => {
+                state = [...state , ...action.payload]
+            }
+        }
+    }) --> RTK
+    export const {addItem , removeItem} = createSlice.actions
+    export default createSlice.reducer
+
+--Put Slice into reducers
+    -- {
+        reducer: {
+            cart: cartSlice,
+            user: userSlice
+        }
+    }
+
+Subscribing to the store by Selector
+
+
+//read about 
+ -- middlewares
+ -- thunk
+
+
