@@ -1,3 +1,8 @@
+.body-content {
+  width: 100%;
+  overflow: auto;
+  padding-top: 120px;
+}
 .rest_body {
   letter-spacing: 0;
     background: #fff;
@@ -6,7 +11,6 @@
     position: relative;
     padding: 39px;
     margin-bottom: 0px;
-    height: calc(1080px - 904px);
 }
 .rest_header h1 {
 font-weight: 600;

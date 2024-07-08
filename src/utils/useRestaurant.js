@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { FETCH_RESTAURANT_URL } from "../constantData";
 
 const useRestaurant = async () => {
 
@@ -10,9 +11,7 @@ const useRestaurant = async () => {
       }, []);
     
       async function getRestaurants() {
-        const res = await fetch(
-          "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9654796&lng=77.7184638&page_type=DESKTOP_WEB_LISTING"
-        );
+        const res = await fetch(FETCH_RESTAURANT_URL);
         const data = await res.json();
         //optional chaining
         const actualData = data?.data?.cards[2]?.data?.data?.cards;
